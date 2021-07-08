@@ -98,7 +98,7 @@ const Article = (props) => {
                            <Typography className={classes.fontBold} variant='body2' color='textPrimary'>
                               Price:{' '}
                               <Box className={classes.fontNormal} component='span'>
-                                 {article.price} CHF
+                                 {article.price === null ? 0 : article.price} CHF
                               </Box>
                            </Typography>
                         </Box>
