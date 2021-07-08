@@ -12,7 +12,7 @@ function App() {
       <div className='App' style={{ backgroundColor: '#F5F5F3', height: '100vh' }}>
          <Header />
          <div style={{ backgroundColor: '#F5F5F3' }}>
-            <Container maxWidth='lg' style={{ padding: '2rem 1rem', backgroundColor: '#FFFFFF', marginTop: '2rem' }}>
+            <Container maxWidth='lg' style={{ padding: '2rem 1rem' }}>
                <Switch>
                   <Route exact path={'/'} component={Home} />
                   <Route path={'/search/:searchText'} component={ListItems} />

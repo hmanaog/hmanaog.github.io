@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, NativeSelect, Typography } from '@material-ui/core';
+import { Box, NativeSelect, Typography, CircularProgress } from '@material-ui/core';
 import Items from './Items';
 
 // Styles
@@ -104,31 +104,41 @@ const ListItems = (props) => {
    };
 
    return (
-      <Box className={classes.box}>
-         <Box className={classes.wrapper}>
-            <Typography variant='body2' color='textPrimary' component='p'>
-               Total count: {items.articles.length}{' '}
-            </Typography>
-            <Box className={classes.wrapper}>
-               <Typography
-                  variant='body2'
-                  color='textPrimary'
-                  component='p'
-                  style={{ fontSize: '18px', marginRight: '0.2rem' }}
-               >
-                  Sort by:
-               </Typography>{' '}
-               <NativeSelect value={value} style={{ fontSize: '18px' }} onChange={handleSelectChange} name='itemSort'>
-                  <option value={'default'}>Relevance</option>
-                  <option value={'lower'}>Lowest price</option>
-                  <option value={'higher'}>Highest price</option>
-                  <option value={'ending'}>Ending soon</option>
-               </NativeSelect>
+      <>
+         {!sortedItems.length ? (
+            <CircularProgress size={100} style={{ position: 'fixed', left: '50%', top: '50%' }} />
+         ) : (
+            <Box className={classes.box}>
+               <Box className={classes.wrapper}>
+                  <Typography variant='body2' color='textPrimary' component='p'>
+                     Total count: {items.articles.length}{' '}
+                  </Typography>
+                  <Box className={classes.wrapper}>
+                     <Typography
+                        variant='body2'
+                        color='textPrimary'
+                        component='p'
+                        style={{ fontSize: '18px', marginRight: '0.2rem' }}
+                     >
+                        Sort by:
+                     </Typography>{' '}
+                     <NativeSelect
+                        value={value}
+                        style={{ fontSize: '18px' }}
+                        onChange={handleSelectChange}
+                        name='itemSort'
+                     >
+                        <option value={'default'}>Relevance</option>
+                        <option value={'lower'}>Lowest price</option>
+                        <option value={'higher'}>Highest price</option>
+                        <option value={'ending'}>Ending soon</option>
+                     </NativeSelect>
+                  </Box>
+               </Box>
+               <Items sortedItems={sortedItems} />
             </Box>
-         </Box>
-
-         <Items sortedItems={sortedItems} />
-      </Box>
+         )}
+      </>
    );
 };
 
