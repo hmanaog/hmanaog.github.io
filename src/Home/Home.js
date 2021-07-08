@@ -11,15 +11,13 @@ const useStyles = makeStyles({
       flexDirection: 'row',
       alignItems: 'center',
       height: '60px',
-      flexWrap: 'wrap',
       margin: '2rem 0rem',
    },
    textField: {
-      minWidth: '80%',
+      width: '80%',
       marginRight: '1rem',
    },
    button: {
-      minWidth: '10%',
       height: '100%',
    },
 });
@@ -32,7 +30,8 @@ const Home = (props) => {
       setSearchInput(event.target.value);
    };
 
-   const handleSearchButton = () => {
+   const handleSearchButton = (event) => {
+      event.preventDefault();
       if (searchInput.length) {
          props.history.push(`/search/${searchInput}`);
       }

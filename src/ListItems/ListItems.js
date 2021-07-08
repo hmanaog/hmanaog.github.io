@@ -6,7 +6,7 @@ import { Box, Grid, Card, CardContent, CardMedia, Typography } from '@material-u
 // Styles
 const useStyles = makeStyles({
    box: {
-      margin: '0rem 5rem',
+      margin: '0 0',
    },
    grid: {
       marginTop: '1rem',
