@@ -7,6 +7,7 @@ The goal of this exercise is to build a (very) **small version of Ricardo** usin
 - Users first land on the **Home Page** where they would see a search bar and a (initially disabled) `search` button
 - `SEARCH` button is **disabled by default**. Typing anything on this search bar enables the `**SEARCH**` button.
 - Clicking the `SEARCH` button goes to the **Search page**
+![image](https://user-images.githubusercontent.com/57378295/124983119-e08b9800-e037-11eb-9da8-f24116350bc3.png)
 
 # Search page (/search/:searchText)
 - The **Search page** shows the **total number** of results
@@ -17,6 +18,7 @@ The goal of this exercise is to build a (very) **small version of Ricardo** usin
     - The price in CHF
 - Clicking on a product card (you can also add a link inside the product card if you prefer) navigates to the **Product Details Page**
 - Clicking the Ricardo logo navigates back to the **Home Page**
+![image](https://user-images.githubusercontent.com/57378295/124983144-e84b3c80-e037-11eb-9cef-ba514a9eed29.png)
 
 # Product Details Page (/article/:articleId)
 - The **Product Details Page** shows a bit more details about the product:
@@ -27,6 +29,7 @@ The goal of this exercise is to build a (very) **small version of Ricardo** usin
     - The price
     - The description (formatted in HTML)
 - Clicking the Ricardo logo navigates back to the **Home Page**
+![image](https://user-images.githubusercontent.com/57378295/124983205-f4cf9500-e037-11eb-8116-05641c54ffe5.png)
 
 ## Requirements
 
